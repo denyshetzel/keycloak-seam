@@ -1,0 +1,33 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.sso</groupId>
+	<artifactId>keycloak-seam</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<seam.version>2.2.2.Final</seam.version>
+		<org.keycloak-version>5.0.0</org.keycloak-version>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.seam</groupId>
+			<artifactId>jboss-seam</artifactId>
+			<version>${seam.version}</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<version>2.5</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.keycloak</groupId>
+			<artifactId>keycloak-servlet-filter-adapter</artifactId>
+			<version>${org.keycloak-version}</version>
+		</dependency>
+	</dependencies>
+</project>
