@@ -1,12 +1,12 @@
 # keycloak-seam
 
-This project has the objective the integration between Keycloak and Jboss Seam.
+This project is an extension of the KeycloakOIDCFilter with the objective of integration between Keycloak and Jboss Seam
 
-web.xml
+<b>web.xml</b>
 ```xml
 <filter>
     <filter-name>Keycloak Filter</filter-name>
-    <filter-class>com.yourpackage.SeamKeycloakOIDCFilter</filter-class>
+    <filter-class>br.com.sso.SeamKeycloakOIDCFilter</filter-class>
   <init-param>
     <param-name>keycloak.config.skipPattern</param-name>
     <param-value>^/(.js|.css)</param-value>
@@ -18,7 +18,22 @@ web.xml
 </filter-mapping>
 ```
 
-component.xml
+<b>component.xml</b>
 ```xml
 <security:identity authenticate-method="#{authenticator.authenticate}"/>
+```
+
+```java
+@Stateless
+@Name("authenticator")
+public class AuthenticatorAction {
+    ...
+
+    public boolean authenticate() {
+        // your login logic
+        return true;
+    }
+
+    ...
+}
 ```
